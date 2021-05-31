@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 @app.route('/update_server', methods=['POST'])
 def webhook():
+    print("Estoy aqui.")
     if request.method == 'POST':
         repo = git.Repo('.')
         origin = repo.remotes.origin
