@@ -10,7 +10,7 @@ app = Flask(__name__)
         if request.method == 'POST':
             repo = Repo('./flaskanywhere')
             origin = repo.remotes.origin
-            repo.create_head('master',origin.refs.master).set_tracking_branch(origin.refs.master).checkout()
+            #repo.create_head('master',origin.refs.master).set_tracking_branch(origin.refs.master).checkout()
             origin.pull()
             return 'Updated PythonAnywhere successfully', 200
         else:
