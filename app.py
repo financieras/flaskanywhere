@@ -10,7 +10,7 @@ app = Flask(__name__)
         if request.method == 'POST':
             repo = Repo('./flaskanywhere')
             origin = repo.remotes.origin
-            #repo.create_head('master',origin.refs.master).set_tracking_branch(origin.refs.master).checkout()
+            repo.create_head('master',origin.refs.master).set_tracking_branch(origin.refs.master).checkout()
             origin.pull()
             return 'Updated PythonAnywhere successfully', 200
         else:
@@ -18,6 +18,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return '<h1>Hello there from Flask!</h1><p>Continuous Deployment of a Python Flask Application.</p>'
+    return '<h1>Hello there from PythonAnywhere!</h1><p>Continuous Deployment of a Python Flask Application.</p>'
 if __name__ == '__main__':
     app.run(debug=True)
