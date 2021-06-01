@@ -18,6 +18,6 @@ def webhook():
 
 @app.route('/')
 def hello():
-    return '<h1>Hello there from PythonAnywhere!</h1><p>Continuous Deployment of a <b>Python</b> Flask Application.</p>'
+    return '<h1>hello there from PythonAnywhere!</h1><p>Continuous Deployment of a <b>Python</b> Flask Application.</p>'
 if __name__ == '__main__':
     app.run(debug=True)
