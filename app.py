@@ -1,20 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from flask import Flask, request
-import git
+from flask.wrappers import Response
 
 app = Flask(__name__)
 
 @app.route('/update_server', methods=['POST'])
 def update_server():
-    if request.method == 'POST':
-        repo = git.Repo('./flaskanywhere')
-        origin = repo.remotes.origin
-        #repo.create_head('master',origin.refs.master).set_tracking_branch(origin.refs.master).checkout()
-        origin.pull()
-        return 'Updated PythonAnywhere successfully', 200
-    else:
-        return 'Wrong event type', 400
+    print(request.json)
+    return Response(status=200)
 
 @app.route('/')
 def hello():
