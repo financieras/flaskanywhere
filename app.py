@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/update_server', methods=['POST'])
 def webhook():
     if request.method == 'POST':
-        repo = git.Repo('./flaskanywhere')
+        repo = git.Repo('.')
         origin = repo.remotes.origin
         #repo.create_head('master',origin.refs.master).set_tracking_branch(origin.refs.master).checkout()
         origin.pull()
@@ -18,6 +18,6 @@ def webhook():
 
 @app.route('/')
 def hello():
-    return '<h1>Bye bye there from PythonAnywhere!</h1><p>Continuous Deployment of a <i>Python</i> Flask Application.</p>'
+    return '<h1>Good Bye there from PythonAnywhere!</h1><p>Continuous Deployment of a <i>Python</i> Flask Application.</p>'
 if __name__ == '__main__':
     app.run(debug=True)
