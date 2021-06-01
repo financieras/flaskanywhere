@@ -11,7 +11,7 @@ def webhook():
         repo = git.Repo('./flaskanywhere')
         origin = repo.remotes.origin
         #repo.create_head('master',origin.refs.master).set_tracking_branch(origin.refs.master).checkout()
-        origin.pull(origin,'main')
+        origin.pull()
         return 'Updated PythonAnywhere successfully', 200
     else:
         return 'Wrong event type', 400
