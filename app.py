@@ -3,7 +3,7 @@
 from flask import Flask, request
 import git
 
-app = Flask(name)
+app = Flask(__name__)
 
 @app.route('/update_server', methods=['POST'])
 def webhook():
@@ -18,6 +18,6 @@ def webhook():
 
 @app.route('/')
 def hello():
-    return '<h1>Hi there from PythonAnywhere!</h1><p>Continuous Deployment of a <b>Python</b> Flask Application.</p>'
-if name == 'main':
+    return '<h1>Hello there from PythonAnywhere!</h1><p>Continuous Deployment of a <b>Python</b> Flask Application.</p>'
+if __name__ == '__main__':
     app.run(debug=True)
