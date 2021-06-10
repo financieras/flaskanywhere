@@ -6,7 +6,6 @@ import git
 
 app = Flask(__name__)
 
-#Con este codigo el webhook de GitHub no da error
 @app.route('/update_server', methods=['POST'])
 def update_server():
     print(request.json)
@@ -23,4 +22,4 @@ def git_update():
 
 @app.route('/')
 def hello():
-    return '<h1>Hello there from PythonAnywhere using Flask!</h1><p>Continuous Deployment of a Python Flask Application.</p>'
+    return '<h1>Hello from Flask</h1><p>Continuous Deployment.</p>'
