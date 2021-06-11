@@ -22,4 +22,4 @@ def git_update():
 
 @app.route('/')
 def hello():
-    return '<h1>Hola desde Flask</h1><p>Despliegue contínuo.</p>'
+    return '<h1>Hola desde Flask</h1><p>Despliegue contínuo con webhooks.</p>'
