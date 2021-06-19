@@ -6,11 +6,6 @@ import git
 
 app = Flask(__name__)
 
-@app.route('/update_server', methods=['POST'])
-def update_server():
-    print(request.json)
-    return Response(status=200)
-
 @app.route('/git_update', methods=['POST'])
 def git_update():
     repo = git.Repo('./flaskanywhere')
